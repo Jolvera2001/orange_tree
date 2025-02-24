@@ -29,7 +29,7 @@ dependencies {
     implementation("io.ktor:ktor-server-status-pages")
     implementation("io.ktor:ktor-server-html-builder")
     implementation("org.jetbrains.kotlinx:kotlinx-html:$kotlinx_html_version")
-    implementation("org.jetbrains:kotlin-css:1.0.0-pre.129-kotlin-1.4.20")
+    implementation("org.jetbrains.kotlin-wrappers:kotlin-css:1.0.0-pre.648")
     implementation("io.insert-koin:koin-ktor:$koin_version")
     implementation("io.insert-koin:koin-logger-slf4j:$koin_version")
     implementation("io.ktor:ktor-server-netty")
