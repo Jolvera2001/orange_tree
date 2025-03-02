@@ -34,6 +34,13 @@ dependencies {
     implementation("org.jetbrains.kotlin-wrappers:kotlin-css:1.0.0-pre.648")
     implementation("io.ktor:ktor-server-netty")
 
+    // db
+    implementation("org.jetbrains.exposed:exposed-core:0.59.0")
+    implementation("org.jetbrains.exposed:exposed-dao:0.59.0")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.59.0")
+    implementation("org.jetbrains.exposed:exposed-kotlin-datetime:0.59.0")
+    implementation("org.mariadb.jdbc:mariadb-java-client:3.5.2")
+
     // ktor client
     implementation("io.ktor:ktor-client-core")
     implementation("io.ktor:ktor-client-cio")
