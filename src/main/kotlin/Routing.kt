@@ -1,6 +1,7 @@
 package dev.jolvera
 
 import dev.jolvera.templates.MainTemplate
+import dev.jolvera.views.AboutView
 import dev.jolvera.views.BlogView
 import dev.jolvera.views.HomeView
 import io.ktor.http.*
@@ -31,7 +32,7 @@ fun Application.configureRouting() {
 
         get("/about") {
             call.respondHtmlTemplate(MainTemplate()) {
-                content {}
+                AboutView().insertInto(content)
             }
         }
     }
