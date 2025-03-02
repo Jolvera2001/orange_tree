@@ -1,16 +1,14 @@
 package dev.jolvera
 
+import dev.jolvera.templates.MainTemplate
+import dev.jolvera.views.BlogView
+import dev.jolvera.views.HomeView
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.html.*
 import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import kotlinx.css.*
-import kotlinx.html.*
-import org.koin.dsl.module
-import org.koin.ktor.plugin.Koin
-import org.koin.logger.slf4jLogger
 
 fun Application.configureRouting() {
     install(StatusPages) {
@@ -20,7 +18,21 @@ fun Application.configureRouting() {
     }
     routing {
         get("/") {
-            call.respondText("Hello World!")
+            call.respondHtmlTemplate(MainTemplate()) {
+                HomeView().insertInto(content)
+            }
+        }
+
+        get("/blogs") {
+            call.respondHtmlTemplate(MainTemplate()) {
+                BlogView().insertInto(content)
+            }
+        }
+
+        get("/about") {
+            call.respondHtmlTemplate(MainTemplate()) {
+                content {}
+            }
         }
     }
 }

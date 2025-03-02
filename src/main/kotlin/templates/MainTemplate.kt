@@ -4,7 +4,8 @@ import io.ktor.server.html.*
 import kotlinx.html.*
 
 class MainTemplate : Template<HTML> {
-    val content = Placeholder<MAIN>()
+    val header = Placeholder<FlowContent>()
+    val content = Placeholder<FlowContent>()
 
     override fun HTML.apply() {
         head {
@@ -17,8 +18,8 @@ class MainTemplate : Template<HTML> {
                 nav {
                     ul {
                         li { a(href = "/") { +"Home" } }
-                        li { a(href = "/About") { +"About" } }
-                        li { a(href = "/Blogs") { +"Blogs" } }
+                        li { a(href = "/about") { +"About" } }
+                        li { a(href = "/blogs") { +"Blogs" } }
                     }
                 }
             }

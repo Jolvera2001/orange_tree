@@ -1,5 +1,6 @@
 package dev.jolvera
 
+import dev.jolvera.templates.configureCss
 import io.ktor.server.application.*
 
 fun main(args: Array<String>) {
@@ -7,6 +8,7 @@ fun main(args: Array<String>) {
 }
 
 fun Application.module() {
+    configureCss()
     configureTemplating()
     configureFrameworks()
     configureRouting()

@@ -6,7 +6,7 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.css.*
 
-fun Application.module() {
+fun Application.configureCss() {
     val background = hsl(30, 100, 70)
     val cardBackground = hsl(30, 30, 95)
 
