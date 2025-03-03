@@ -1,5 +1,6 @@
 package dev.jolvera
 
+import dev.jolvera.services.GithubClient
 import dev.jolvera.templates.MainTemplate
 import dev.jolvera.views.AboutView
 import dev.jolvera.views.BlogView
@@ -10,6 +11,7 @@ import io.ktor.server.html.*
 import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import org.koin.java.KoinJavaComponent.inject
 
 fun Application.configureRouting() {
     install(StatusPages) {
@@ -19,9 +21,18 @@ fun Application.configureRouting() {
     }
     routing {
         get("/") {
-            call.respondHtmlTemplate(MainTemplate()) {
-                HomeView().insertInto(content)
+            val githubService: GithubClient by inject(GithubClient::class.java)
+
+            try {
+                val githubProfile = githubService.getGithubUser()
+
+                call.respondHtmlTemplate(MainTemplate()) {
+                    HomeView().insertInto(content)
+                }
+            } catch (e: Exception) {
+                log.error(e.message, e)
             }
+
         }
 
         get("/blogs") {

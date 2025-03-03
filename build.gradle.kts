@@ -1,4 +1,3 @@
-val koin_version: String by project
 val kotlin_version: String by project
 val kotlinx_html_version: String by project
 val logback_version: String by project
@@ -48,8 +47,11 @@ dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json")
 
     // di
-    implementation("io.insert-koin:koin-ktor:$koin_version")
-    implementation("io.insert-koin:koin-logger-slf4j:$koin_version")
+    implementation(project.dependencies.platform("io.insert-koin:koin-bom:4.0.2"))
+    implementation("io.insert-koin:koin-core")
+    implementation("io.insert-koin:koin-ktor")
+    implementation("io.insert-koin:koin-logger-slf4j")
+
     implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("io.ktor:ktor-server-config-yaml")
     testImplementation("io.ktor:ktor-server-test-host")
