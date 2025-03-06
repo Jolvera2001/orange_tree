@@ -21,7 +21,7 @@ fun Application.configureRouting() {
     }
     routing {
         get("/") {
-            val githubService: GithubClient by inject(GithubClient::class.java)
+            val githubService: GithubClient by inject(GithubClient::class.java) // DO THIS, NOT "by inject()"
 
             try {
                 val githubProfile = githubService.getGithubUser()
