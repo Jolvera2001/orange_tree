@@ -10,7 +10,7 @@ import kotlinx.css.properties.TextDecoration
 
 fun Application.configureCss() {
     val background = hsl(30, 100, 70)
-    val cardBackground = hsl(30, 30, 95)
+    val cardBackground = hsl(30, 10, 95)
 
     val textColor = hsl(30, 15, 15)
 
@@ -27,6 +27,10 @@ fun Application.configureCss() {
                     flexDirection = FlexDirection.column
                     alignItems = Align.center
                     minHeight = 100.vh
+                }
+
+                img {
+                    borderRadius = 50.pct
                 }
 
                 rule("header") {
@@ -101,6 +105,27 @@ fun Application.configureCss() {
                     borderRadius = 4.px
                     boxShadow = BoxShadows()
                     marginBottom = 1.rem
+                }
+
+                rule(".card-header") {
+                    display = Display.flex
+                    flexDirection = FlexDirection.row
+                    alignItems = Align.center
+                    justifyContent = JustifyContent.center
+                    gap = 1.em
+                }
+
+                rule(".vertical-align") {
+                    display = Display.flex
+                    flexDirection = FlexDirection.column
+                    justifyContent = JustifyContent.center
+                    gap = 4.px
+                }
+
+                rule(".card-body") {
+                    display = Display.flex
+                    flexDirection = FlexDirection.column
+                    justifyContent = JustifyContent.center
                 }
 
                 rule("footer") {

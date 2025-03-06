@@ -54,6 +54,10 @@ dependencies {
 
     implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("io.ktor:ktor-server-config-yaml")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
+
+    testImplementation("io.mockk:mockk:1.13.17")
     testImplementation("io.ktor:ktor-server-test-host")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
 }

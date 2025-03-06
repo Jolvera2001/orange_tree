@@ -27,7 +27,7 @@ fun Application.configureRouting() {
                 val githubProfile = githubService.getGithubUser()
 
                 call.respondHtmlTemplate(MainTemplate()) {
-                    HomeView().insertInto(content)
+                    HomeView(githubProfile).insertInto(content)
                 }
             } catch (e: Exception) {
                 log.error(e.message, e)

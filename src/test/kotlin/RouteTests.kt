@@ -36,4 +36,14 @@ class RouteTests {
             assertEquals(HttpStatusCode.OK, status)
         }
     }
+
+    @Test
+    fun testBlogPagination() = testApplication {
+        TODO()
+    }
+
+    @Test
+    fun testBlogView() = testApplication {
+        TODO()
+    }
 }
