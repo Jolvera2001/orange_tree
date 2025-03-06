@@ -10,7 +10,6 @@ fun main(args: Array<String>) {
 
 fun Application.module() {
     configureCss()
-    configureTemplating()
     configureFrameworks()
     configureRouting()
 }

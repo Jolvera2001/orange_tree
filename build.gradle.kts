@@ -8,6 +8,27 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "2.1.10"
 }
 
+ktor {
+    docker {
+        localImageName.set("jolvera-personal-blog-server")
+        imageTag.set("0.0.1")
+        portMappings.set(listOf(
+            io.ktor.plugin.features.DockerPortMapping(
+                80,
+                8080,
+                io.ktor.plugin.features.DockerPortMappingProtocol.TCP
+            )
+        ))
+        externalRegistry.set(
+            io.ktor.plugin.features.DockerImageRegistry.dockerHub(
+                appName = provider { "blog-server" },
+                username = providers.environmentVariable("DOCKER_USERNAME"),
+                password = providers.environmentVariable("DOCKER_PASSWORD"),
+            )
+        )
+    }
+}
+
 group = "dev.jolvera"
 version = "0.0.1"
 
