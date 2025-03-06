@@ -1,15 +1,15 @@
 package dev.jolvera.di
 
 import org.jetbrains.exposed.sql.Database
-import org.jetbrains.exposed.sql.transactions.transaction
 
 class DatabaseManager(
     private val jdbcUrl: String,
     private val driver: String,
     private val user: String = "",
-    private val password: String = ""
+    private val password: String = "",
+    public var db: Database? = null
 ) {
-    fun connect(): Database {
+    fun connect() {
         val database = Database.connect(
             url = jdbcUrl,
             driver = driver,
@@ -17,10 +17,6 @@ class DatabaseManager(
             password = password
         )
 
-        transaction(database) {
-            // SchemaUtils.create( [model here] )
-        }
-
-        return database
+        db = database
     }
 }
