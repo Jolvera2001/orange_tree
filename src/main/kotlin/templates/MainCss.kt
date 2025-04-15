@@ -5,8 +5,8 @@ import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.css.*
-import kotlinx.css.properties.BoxShadows
 import kotlinx.css.properties.TextDecoration
+import kotlinx.css.properties.linearGradient
 
 fun Application.configureCss() {
     val background = hsl(30, 100, 70)
@@ -36,19 +36,11 @@ fun Application.configureCss() {
                 rule("header") {
                     width = 100.pct
                     textAlign = TextAlign.center
-                    padding = Padding(1.rem)
-                }
-
-                rule(".headline") {
-                    margin = Margin(0.px, 0.px, 1.rem)
-                    fontSize = 3.0.em
                 }
 
                 rule("nav") {
-                    width = 100.pct
                     display = Display.flex
                     justifyContent = JustifyContent.center
-                    paddingBottom = 1.rem
                 }
 
                 rule("ul") {
@@ -73,22 +65,30 @@ fun Application.configureCss() {
                     hover {
                         backgroundColor = rgb(255, 255, 255, 0.3)
                         color = Color.darkBlue
-                        borderRadius = 4.px
+                        borderRadius = 10.px
                     }
                 }
 
                 rule("main") {
                     width = 100.pct
-                    maxWidth = 800.px
+                    maxWidth = 70.pct
                     flex = Flex(1.0, 1.0, 100.pct)
                     display = Display.flex
                     flexDirection = FlexDirection.column
                     alignItems = Align.center
                 }
 
+
+                rule("footer") {
+                    width = 100.pct
+                    textAlign = TextAlign.center
+                    padding = Padding(1.rem)
+                    boxSizing = BoxSizing.borderBox
+                }
+
                 rule(".container") {
                     width = 100.pct
-                    padding = Padding(1.rem)
+                    padding = Padding(.75.rem)
                     boxSizing = BoxSizing.borderBox
                     textAlign = TextAlign.center
                 }
@@ -99,22 +99,6 @@ fun Application.configureCss() {
                     margin = Margin(0.px, LinearDimension.auto)
                 }
 
-                rule(".card") {
-                    backgroundColor = cardBackground
-                    padding = Padding(1.rem)
-                    borderRadius = 4.px
-                    boxShadow = BoxShadows()
-                    marginBottom = 1.rem
-                }
-
-                rule(".card-header") {
-                    display = Display.flex
-                    flexDirection = FlexDirection.row
-                    alignItems = Align.center
-                    justifyContent = JustifyContent.center
-                    gap = 1.em
-                }
-
                 rule(".vertical-align") {
                     display = Display.flex
                     flexDirection = FlexDirection.column
@@ -122,17 +106,28 @@ fun Application.configureCss() {
                     gap = 4.px
                 }
 
-                rule(".card-body") {
-                    display = Display.flex
-                    flexDirection = FlexDirection.column
-                    justifyContent = JustifyContent.center
+                rule(".headline") {
+                    fontSize = 1.5.rem
+                    margin = Margin(horizontal = 2.0.rem)
                 }
 
-                rule("footer") {
-                    width = 100.pct
-                    textAlign = TextAlign.center
+                rule(".topbar") {
+                    display = Display.flex
+                    flexDirection = FlexDirection.row
+                    justifyContent = JustifyContent.spaceEvenly
+                    alignItems = Align.center
                     padding = Padding(1.rem)
-                    marginTop = 2.rem
+                }
+
+                rule(".headline .right") {
+                    flexGrow = 1
+                }
+
+                rule(".navbar") {
+                    display = Display.flex
+                    justifyContent = JustifyContent.center
+                    alignItems = Align.center
+                    marginRight = LinearDimension.auto
                 }
             }
         }

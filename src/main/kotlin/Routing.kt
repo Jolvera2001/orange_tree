@@ -11,7 +11,12 @@ import io.ktor.server.html.*
 import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import org.koin.java.KoinJavaComponent.inject
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
+
+object RouteKoinIntegration : KoinComponent
+
+val Route.di get() = RouteKoinIntegration
 
 fun Application.configureRouting() {
     install(StatusPages) {
@@ -21,18 +26,9 @@ fun Application.configureRouting() {
     }
     routing {
         get("/") {
-            val githubService: GithubClient by inject(GithubClient::class.java) // DO THIS, NOT "by inject()"
-
-            try {
-                val githubProfile = githubService.getGithubUser()
-
-                call.respondHtmlTemplate(MainTemplate()) {
-                    HomeView(githubProfile).insertInto(content)
-                }
-            } catch (e: Exception) {
-                log.error(e.message, e)
+            call.respondHtmlTemplate(MainTemplate()) {
+                HomeView().insertInto(content)
             }
-
         }
 
         get("/blogs") {

@@ -10,7 +10,6 @@ class MainTemplate : Template<HTML> {
     override fun HTML.apply() {
         head {
             title { +"Orange_Tree" }
-            // Google Fonts preconnect and stylesheet links
             link(rel = "preconnect", href = "https://fonts.googleapis.com")
             link(rel = "preconnect", href = "https://fonts.gstatic.com") {
                 attributes["crossorigin"] = "anonymous"
@@ -25,13 +24,16 @@ class MainTemplate : Template<HTML> {
         }
         body {
             header {
-                h1(classes = "headline") { +"Orange_Tree" }
-                nav {
-                    ul {
-                        li { a(href = "/") { +"Home" } }
-                        li { a(href = "/about") { +"About" } }
-                        li { a(href = "/blogs") { +"Blogs" } }
+                div(classes = "topbar") {
+                    h1(classes = "headline") { +"Orange_Tree" }
+                    nav(classes = "navbar") {
+                        ul {
+                            li { a(href = "/") { +"Home" } }
+                            li { a(href = "/about") { +"About" } }
+                            li { a(href = "/blogs") { +"Blogs" } }
+                        }
                     }
+                    p(classes = "right") {}
                 }
             }
             main {
@@ -42,7 +44,7 @@ class MainTemplate : Template<HTML> {
             footer {
                 p { +"© 2025 My Blog" }
                 nav {
-                    a(href = "https://github.com/yourusername") { +"GitHub" }
+                    a(href = "https://github.com/jolvera2001") { +"GitHub" }
                     +"  |  "
                     a(href = "/rss") { +"RSS" }
                 }
