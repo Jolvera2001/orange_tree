@@ -6,11 +6,11 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.css.*
 import kotlinx.css.properties.TextDecoration
+import kotlinx.css.properties.deg
 import kotlinx.css.properties.linearGradient
 
 fun Application.configureCss() {
-    val background = hsl(30, 100, 70)
-    val cardBackground = hsl(30, 10, 95)
+    val backgroundMain = hsl(30, 100, 70)
 
     val textColor = hsl(30, 15, 15)
 
@@ -19,7 +19,7 @@ fun Application.configureCss() {
             call.respondCss {
                 body {
                     fontFamily = "Nunito, sans-serif"
-                    backgroundColor = background
+                    backgroundColor = backgroundMain
                     color = textColor
                     margin = Margin(0.px)
                     padding = Padding(0.px)

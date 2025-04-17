@@ -55,11 +55,9 @@ dependencies {
     implementation("io.ktor:ktor-server-netty")
 
     // db
-    implementation("org.jetbrains.exposed:exposed-core:0.59.0")
-    implementation("org.jetbrains.exposed:exposed-dao:0.59.0")
-    implementation("org.jetbrains.exposed:exposed-jdbc:0.59.0")
-    implementation("org.jetbrains.exposed:exposed-kotlin-datetime:0.59.0")
-    implementation("org.mariadb.jdbc:mariadb-java-client:3.5.2")
+    implementation("org.mongodb:mongodb.driver.core:4.10.2")
+    implementation("org.mongodb:mongodb.driver.sync:4.10.2")
+    implementation("org.mongodb:bson:4.10.2")
 
     // ktor client
     implementation("io.ktor:ktor-client-core")
