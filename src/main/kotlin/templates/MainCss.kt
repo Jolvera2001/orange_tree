@@ -5,8 +5,8 @@ import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.css.*
+import kotlinx.css.properties.LinearGradientBuilder
 import kotlinx.css.properties.TextDecoration
-import kotlinx.css.properties.deg
 import kotlinx.css.properties.linearGradient
 
 fun Application.configureCss() {
@@ -19,7 +19,7 @@ fun Application.configureCss() {
             call.respondCss {
                 body {
                     fontFamily = "Nunito, sans-serif"
-                    backgroundColor = backgroundMain
+                    backgroundImage = linearGradient { backgroundMain }
                     color = textColor
                     margin = Margin(0.px)
                     padding = Padding(0.px)
