@@ -9,7 +9,7 @@ import kotlinx.css.properties.TextDecoration
 import kotlinx.css.properties.deg
 import kotlinx.css.properties.linearGradient
 
-fun Application.configureCss() {
+fun Application.configureMainCss() {
     val backgroundMain = hsl(30, 100, 70)
     val backgroundSec = hsl(322, 60, 42)
 
