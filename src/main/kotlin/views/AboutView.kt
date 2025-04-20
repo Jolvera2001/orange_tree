@@ -1,10 +1,10 @@
 package dev.jolvera.views
 
-import kotlinx.html.FlowContent
-import kotlinx.html.h2
+import dev.jolvera.services.BlogService
+import kotlinx.html.*
 
-class AboutView : View() {
+class AboutView() : View() {
     override fun FlowContent.apply() {
-        h2 { +"About View" }
+        h1 { +"About Page" }
     }
 }
