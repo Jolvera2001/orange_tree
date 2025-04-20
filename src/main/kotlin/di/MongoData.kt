@@ -6,7 +6,7 @@ import com.mongodb.kotlin.client.coroutine.MongoDatabase
 class MongoData {
     private var database: MongoDatabase? = null
     init {
-        val uri = "" // Get from env var
+        val uri = System.getenv("MONGO_CONNECTION_STRING")
 
         val client = MongoClient.create(uri)
         database = client.getDatabase("OrangeTreeDb")
