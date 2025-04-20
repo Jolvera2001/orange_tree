@@ -55,7 +55,8 @@ dependencies {
     implementation("io.ktor:ktor-server-netty")
 
     // db
-
+    implementation("org.mongodb:mongodb-driver-kotlin-coroutine:5.4.0")
+    implementation("org.mongodb:bson-kotlinx:5.4.0")
 
     // ktor client
     implementation("io.ktor:ktor-client-core")
