@@ -19,12 +19,34 @@ class BlogsTemplate : Template<HTML> {
             )
 
             // personal styling
+            link(rel = "stylesheet", href = "/styles.css")
             link(rel = "stylesheet", href = "/blogStyles.css")
         }
-        body {
+        body("body-blogs") {
+            header {
+                div(classes = "topbar") {
+                    h1(classes = "headline") { +"Orange_Tree" }
+                    nav(classes = "navbar") {
+                        ul {
+                            li { a(href = "/") { +"Home" } }
+                            li { a(href = "/about") { +"About" } }
+                            li { a(href = "/blogs") { +"Blogs" } }
+                        }
+                    }
+                    p(classes = "right") {}
+                }
+            }
             main {
-                div("container") {
+                div("container-blog") {
                     insert(content)
+                }
+            }
+            footer {
+                p { +"© 2025 My Blog" }
+                nav {
+                    a(href = "https://github.com/jolvera2001") { +"GitHub" }
+                    +"  |  "
+                    a(href = "/rss") { +"RSS" }
                 }
             }
         }

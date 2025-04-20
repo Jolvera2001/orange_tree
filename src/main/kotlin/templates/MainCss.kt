@@ -10,9 +10,10 @@ import kotlinx.css.properties.deg
 import kotlinx.css.properties.linearGradient
 
 fun Application.configureMainCss() {
+    // orange
     val backgroundMain = hsl(30, 100, 70)
+    // purple
     val backgroundSec = hsl(322, 60, 42)
-
     val textColor = hsl(30, 15, 15)
 
     routing {
