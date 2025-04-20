@@ -45,6 +45,12 @@ fun Application.configureRouting() {
 
         get("/blogs/{blog-slug}") {
             val blogSlug = call.parameters["blog-slug"]
+
+            call.respondText { "Blog slug - ${call.parameters["blog-slug"]}" }
+
+//            call.respondHtmlTemplate(ReadTemplate()) {
+//                BlogSlugView().insertInto(content)
+//            }
         }
     }
 }
