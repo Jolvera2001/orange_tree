@@ -1,7 +1,6 @@
 package dev.jolvera.di
 
 import com.mongodb.kotlin.client.coroutine.MongoClient
-import com.mongodb.reactivestreams.client.MongoClients
 
 class MongoData {
     private val databaseClient: MongoClient? = null

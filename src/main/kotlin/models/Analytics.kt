@@ -4,5 +4,5 @@ import org.bson.types.ObjectId
 
 data class Analytics(
     val blogId: ObjectId,
-    val views: Long,
+    val clicked: Long,
 )
