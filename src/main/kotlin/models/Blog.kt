@@ -1,9 +1,8 @@
 package dev.jolvera.models
 
-import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.Instant
 import org.bson.codecs.pojo.annotations.BsonId
 import org.bson.types.ObjectId
-import java.util.UUID
 
 data class Blog(
     @BsonId val id: ObjectId? = null,
@@ -12,6 +11,6 @@ data class Blog(
     val subtitle: String,
     val author: String,
     val content: String,
-    val updatedAt: LocalDateTime,
-    val createdAt: LocalDateTime,
+    val updatedAt: Instant,
+    val createdAt: Instant,
 )

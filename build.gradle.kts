@@ -52,6 +52,8 @@ dependencies {
     implementation("io.ktor:ktor-server-status-pages")
     implementation("io.ktor:ktor-server-html-builder")
     implementation("org.jetbrains.kotlinx:kotlinx-html:$kotlinx_html_version")
+    // future reference: https://jetbrains.github.io/kotlin-wrappers/kotlin-css/
+    // for some reason this is never put on the css dsl guide FUCK
     implementation("org.jetbrains.kotlin-wrappers:kotlin-css:1.0.0-pre.648")
     implementation("io.ktor:ktor-server-netty")
 
