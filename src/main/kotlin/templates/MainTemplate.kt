@@ -9,6 +9,7 @@ class MainTemplate : Template<HTML> {
     override fun HTML.apply() {
         head {
             title { +"Orange_Tree" }
+            meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
             link(rel = "preconnect", href = "https://fonts.googleapis.com")
             link(rel = "preconnect", href = "https://fonts.gstatic.com") {
                 attributes["crossorigin"] = "anonymous"
@@ -22,17 +23,29 @@ class MainTemplate : Template<HTML> {
             link(rel = "stylesheet", href = "/webjars/bootstrap/bootstrap.css")
         }
         body {
-            header("d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom") {
-                div(classes = "topbar") {
-                    h1(classes = "headline") { +"Orange_Tree" }
-                    nav(classes = "navbar") {
-                        ul {
-                            li { a(href = "/") { +"Home" } }
-                            li { a(href = "/blogs") { +"Blogs" } }
-                            li { a(href = "/about") { +"About" } }
+            header("d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom") {
+                nav(classes = "navbar navbar-expand-lg bg-body-tertiary w-100") {
+                    div("container-fluid") {
+                        a(classes = "navbar-brand me-4", href = "#") { +"Orange_Tree" }
+
+                        button(classes = "navbar-toggler", type = ButtonType.button) {
+                            attributes["data-bs-toggle"] = "collapse"
+                            attributes["data-bs-target"] = "#navbarNav"
+                            attributes["aria-controls"] = "navbarNav"
+                            attributes["aria-expanded"] = "false"
+                            attributes["aria-label"] = "Toggle navigation"
+                            span("navbar-toggler-icon") {}
+                        }
+
+                        div("collapse navbar-collapse") {
+                            attributes["id"] = "navbarNav"
+                            ul("navbar-nav") {
+                                li("nav-item") { a(href = "/", classes = "nav-link") { +"Home" } }
+                                li("nav-item") { a(href = "/blogs", classes = "nav-link") { +"Blogs" } }
+                                li("nav-item") { a(href = "/about", classes = "nav-link") { +"About" } }
+                            }
                         }
                     }
-                    p(classes = "right") {}
                 }
             }
             main {
@@ -40,12 +53,18 @@ class MainTemplate : Template<HTML> {
                     insert(content)
                 }
             }
-            footer {
-                p { +"© 2025 My Blog" }
-                nav {
-                    a(href = "https://github.com/jolvera2001") { +"GitHub" }
-                    +"  |  "
-                    a(href = "/rss") { +"RSS" }
+            footer("container py-3 mt-4 border-top") {
+                div("row") {
+                    div("col-md-6") {
+                        p { +"© 2025 My Blog" }
+                    }
+                    div("col-md-6 d-flex justify-content-end") {
+                        nav {
+                            a(href = "https://github.com/jolvera2001") { +"GitHub" }
+                            +"  |  "
+                            a(href = "/rss") { +"RSS" }
+                        }
+                    }
                 }
             }
             script(src = "/webjars/bootstrap/bootstrap.js") {}
