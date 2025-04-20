@@ -28,8 +28,8 @@ class MainTemplate : Template<HTML> {
                     nav(classes = "navbar") {
                         ul {
                             li { a(href = "/") { +"Home" } }
-                            li { a(href = "/about") { +"About" } }
                             li { a(href = "/blogs") { +"Blogs" } }
+                            li { a(href = "/about") { +"About" } }
                         }
                     }
                     p(classes = "right") {}

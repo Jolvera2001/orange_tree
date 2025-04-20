@@ -1,6 +1,7 @@
 package dev.jolvera
 
 import dev.jolvera.services.GithubClient
+import dev.jolvera.templates.BlogsTemplate
 import dev.jolvera.templates.MainTemplate
 import dev.jolvera.views.AboutView
 import dev.jolvera.views.BlogView
@@ -32,7 +33,7 @@ fun Application.configureRouting() {
         }
 
         get("/blogs") {
-            call.respondHtmlTemplate(MainTemplate()) {
+            call.respondHtmlTemplate(BlogsTemplate()) {
                 BlogView().insertInto(content)
             }
         }
