@@ -5,17 +5,20 @@ import io.ktor.server.html.respondHtml
 import io.ktor.server.routing.get
 import io.ktor.server.routing.routing
 import kotlinx.css.Align
+import kotlinx.css.Color
 import kotlinx.css.Display
 import kotlinx.css.FlexDirection
 import kotlinx.css.Margin
 import kotlinx.css.Padding
 import kotlinx.css.alignItems
+import kotlinx.css.backgroundColor
 import kotlinx.css.backgroundImage
 import kotlinx.css.body
 import kotlinx.css.color
 import kotlinx.css.display
 import kotlinx.css.flexDirection
 import kotlinx.css.fontFamily
+import kotlinx.css.hex
 import kotlinx.css.hsl
 import kotlinx.css.margin
 import kotlinx.css.minHeight
@@ -24,13 +27,14 @@ import kotlinx.css.pct
 import kotlinx.css.properties.deg
 import kotlinx.css.properties.linearGradient
 import kotlinx.css.px
+import kotlinx.css.rgb
 import kotlinx.css.vh
 
 fun Application.configureBlogCss() {
     // dark background
     val backgroundMain = hsl(218, 23, 21)
     // orange
-    val backgroundSec = hsl(30, 100, 70)
+//    val backgroundSec = hsl(30, 100, 70)
     val textColor = hsl(182, 82, 93)
 
     routing {
@@ -42,7 +46,7 @@ fun Application.configureBlogCss() {
                         45.deg
                     ) {
                         colorStop(backgroundMain, 50.pct)
-                        colorStop(backgroundSec, 100.pct)
+                        colorStop(backgroundMain, 100.pct)
                     }
                     color = textColor
                     margin = Margin(0.px)
@@ -51,6 +55,10 @@ fun Application.configureBlogCss() {
                     flexDirection = FlexDirection.column
                     alignItems = Align.center
                     minHeight = 100.vh
+                }
+
+                rule("li a") {
+                    color = Color("#99BBFF")
                 }
             }
         }

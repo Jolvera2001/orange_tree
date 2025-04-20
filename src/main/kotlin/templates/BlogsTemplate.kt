@@ -37,7 +37,7 @@ class BlogsTemplate : Template<HTML> {
                 }
             }
             main {
-                div("container-blog") {
+                div("container") {
                     insert(content)
                 }
             }
