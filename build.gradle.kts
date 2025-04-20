@@ -51,6 +51,7 @@ dependencies {
     implementation("io.ktor:ktor-server-host-common")
     implementation("io.ktor:ktor-server-status-pages")
     implementation("io.ktor:ktor-server-html-builder")
+    implementation("io.ktor:ktor-server-webjars")
     implementation("org.jetbrains.kotlinx:kotlinx-html:$kotlinx_html_version")
     // future reference: https://jetbrains.github.io/kotlin-wrappers/kotlin-css/
     // for some reason this is never put on the css dsl guide FUCK
@@ -79,6 +80,10 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("io.ktor:ktor-server-config-yaml")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
+
+    // webjars
+    implementation("org.webjars:markdown-js:0.5.0-1")
+    implementation("org.webjars:bootstrap:5.3.2")
 
     testImplementation("io.mockk:mockk:1.13.17")
     testImplementation("io.ktor:ktor-server-test-host")

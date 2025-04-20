@@ -19,10 +19,10 @@ class MainTemplate : Template<HTML> {
             )
 
             // personal styling
-            link(rel = "stylesheet", href = "/styles.css")
+            link(rel = "stylesheet", href = "/webjars/bootstrap/bootstrap.css")
         }
         body {
-            header {
+            header("d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom") {
                 div(classes = "topbar") {
                     h1(classes = "headline") { +"Orange_Tree" }
                     nav(classes = "navbar") {
@@ -48,6 +48,7 @@ class MainTemplate : Template<HTML> {
                     a(href = "/rss") { +"RSS" }
                 }
             }
+            script(src = "/webjars/bootstrap/bootstrap.js") {}
         }
     }
 }
