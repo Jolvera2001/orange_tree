@@ -6,6 +6,7 @@ plugins {
     kotlin("jvm") version "2.1.10"
     id("io.ktor.plugin") version "3.0.3"
     id("org.jetbrains.kotlin.plugin.serialization") version "2.1.10"
+    id("co.uzzu.dotenv.gradle") version "2.0.0"
 }
 
 ktor {
