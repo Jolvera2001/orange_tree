@@ -42,5 +42,9 @@ fun Application.configureRouting() {
                 AboutView().insertInto(content)
             }
         }
+
+        get("/blogs/{blog-slug}") {
+            val blogSlug = call.parameters["blog-slug"]
+        }
     }
 }

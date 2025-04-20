@@ -5,7 +5,6 @@ import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.css.*
-import kotlinx.css.properties.LinearGradientBuilder
 import kotlinx.css.properties.TextDecoration
 import kotlinx.css.properties.deg
 import kotlinx.css.properties.linearGradient
