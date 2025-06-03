@@ -1,8 +1,7 @@
 package dev.jolvera.views
 
-import dev.jolvera.services.GithubUser
-import io.ktor.server.html.*
-import kotlinx.html.*
+import kotlinx.html.FlowContent
+import kotlinx.html.h2
 
 class HomeView() : View() {
     override fun FlowContent.apply() {
